@@ -1,8 +1,10 @@
 from lxml import etree
 import ebo_xml_helper
-
+from ebo_definitions import EboDefinitions
 
 class EboObject(object):
+    EBO_TYPES_HANDLER = EboDefinitions('ebo_definitions.xml')
+
     def __init__(self, **kwargs):
         if(kwargs.get('xml')):
             self.__init_from_xml(kwargs.get('xml'))
@@ -10,6 +12,7 @@ class EboObject(object):
             self.__init_from_attributes(kwargs.get('NAME'),
                                         kwargs.get('TYPE'),
                                         kwargs.get('DESCR'))
+        
 
 
     def __init_from_xml(self, xml_node):
@@ -50,6 +53,13 @@ class EboObject(object):
         return self.xml_node
 
 
+    def get_property_value(self, prop_name, is_embedded_prop=False):
+        prop_xml_node = self.find_property_node(prop_name, is_embedded_property=is_embedded_prop)
+        if(etree.iselement(prop_xml_node)):
+            return prop_xml_node.get('Value')
+        return None
+
+
     def find_property_node(self, property_name, is_embedded_property=False):
         attributes_dict = {}
         if(is_embedded_property):
@@ -77,18 +87,18 @@ class EboObject(object):
 
 
     def set_embedded_property(self, embedded_property_name, embedded_property_value, master_property_name):
-        prop_node = ebo_xml_helper.find_xml_node(self.xml_node,
+        master_prop_node = ebo_xml_helper.find_xml_node(self.xml_node,
                                                 ebo_xml_helper.EBO_XML_EXPORTED_OBJECTS_PROP_TAG,
                                                 {'Name':master_property_name},
                                                 direct_children_only=True)
-        if(prop_node is None):
-            prop_node = ebo_xml_helper.create_ebo_xml_node(ebo_xml_helper.EBO_XML_EXPORTED_OBJECTS_PROP_TAG,
+        if(master_prop_node is None):
+            master_prop_node = ebo_xml_helper.create_ebo_xml_node(ebo_xml_helper.EBO_XML_EXPORTED_OBJECTS_PROP_TAG,
                                                             Name=master_property_name,
                                                             Value='')
-            prop_node.set(embedded_property_name, embedded_property_value)
-            self.xml_node.append(prop_node)
+            master_prop_node.set(embedded_property_name, embedded_property_value)
+            self.xml_node.append(master_prop_node)
         else:
-            prop_node.set(embedded_property_name, embedded_property_value)
+            master_prop_node.set(embedded_property_name, embedded_property_value)
 
 
 

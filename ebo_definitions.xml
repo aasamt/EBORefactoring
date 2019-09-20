@@ -1,0 +1,36 @@
+<EboObjects>
+	<Data>
+		<DataObject Name="io.point.CurrentInput" Signal="analog" Type="input" Device="AS"/>
+		<DataObject Name="io.point.CurrentOutput" Signal="analog" Type="output" Device="AS"/>
+		<DataObject Name="io.point.DigitalInput" Signal="digital" Type="input" Device="AS"/>
+		<DataObject Name="io.point.DigitalInputNoLED" Signal="digital" Type="input" Device="AS"/>
+		<DataObject Name="io.point.DigitalOutput" Signal="digital" Type="output" Device="AS"/>
+		<DataObject Name="io.point.ResistiveInput" Signal="analog" Type="input" Device="AS"/>
+		<DataObject Name="io.point.SupervisedInput" Signal="digital" Type="input" Device="AS"/>
+		<DataObject Name="io.point.TemperatureInput" Signal="analog" Type="input" Device="AS"/>
+		<DataObject Name="io.point.VoltageInput" Signal="analog" Type="input" Device="AS"/>		
+		<DataObject Name="io.point.VoltageOutput" Signal="analog" Type="output" Device="AS"/>	
+		<DataObject Name="bacnet.point.analog.Input" Signal="analog" Type="input" Device="BACnet"/>
+		<DataObject Name="bacnet.point.analog.Output" Signal="analog" Type="output" Device="BACnet"/>
+		<DataObject Name="bacnet.point.analog.Value" Signal="analog" Type="value" Device="BACnet"/>
+		<DataObject Name="bacnet.point.digital.Input" Signal="digital" Type="input" Device="BACnet"/>
+		<DataObject Name="bacnet.point.digital.Output" Signal="digital" Type="output" Device="BACnet"/>
+		<DataObject Name="bacnet.point.digital.Value" Signal="digital" Type="value" Device="BACnet"/>
+		<DataObject Name="bacnet.point.multistate.Input" Signal="multistate" Type="input" Device="BACnet"/>
+		<DataObject Name="bacnet.point.digital.Output" Signal="multistate" Type="output" Device="BACnet"/>
+		<DataObject Name="bacnet.point.digital.Value" Signal="multistate" Type="value" Device="BACnet"/>
+		<DataObject Name="bacnet.b3.point.analog.Input" Signal="analog" Type="input" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.analog.Output" Signal="analog" Type="output" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.analog.Value" Signal="analog" Type="value" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.datetime.Value" Signal="datetime" Type="value" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.digital.Input" Signal="digital" Type="input" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.digital.Output" Signal="digital" Type="output" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.digital.PulsedOutput" Signal="digital" Type="output" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.digital.Value" Signal="digital" Type="input" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.multistate.Input" Signal="multistate" Type="input" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.multistate.Output" Signal="multistate" Type="output" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.multistate.PulsedOutput" Signal="multistate" Type="output" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.multistate.Value" Signal="multistate" Type="value" Device="B3"/>
+		<DataObject Name="bacnet.b3.point.string.Value" Signal="string" Type="value" Device="B3"/>
+	</Data>│
+</EboObjects>

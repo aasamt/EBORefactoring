@@ -75,8 +75,7 @@ def _build_xpath_expression(tag, attribute_value_dict, direct_children_only=Fals
         attr_xpath_expr = " and ".join(attr_value_pairs)
         xpath_expr += '[' + attr_xpath_expr + ']'
     return xpath_expr
-
-
+    
 
 def create_ebo_xml_node(tag, **kwargs):
         return etree.Element(tag, **kwargs)
