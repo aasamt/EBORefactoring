@@ -52,6 +52,10 @@ class BACnetObject(EboObject):
 
     def __init__(self, **kwargs):
         super(BACnetObject, self).__init__(**kwargs)
+        if(kwargs.get('BACnetName')):
+            self.set_bacnetname(kwargs.get('BACnetName'))
+        if(kwargs.get('ForeignAddress')):
+            self.set_foreignaddress(kwargs.get('ForeignAddress'))
 
 
     def get_bacnetname(self):
